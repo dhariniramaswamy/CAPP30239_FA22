@@ -45,7 +45,9 @@ Source: primary <br />
 ## Bar Chart HW
 
 homework.html: contains HTML script to view bar chart <br />
-homework.js: contains JavaScript to load in data and modify bar chart
+homework.js: contains JavaScript to load in data and modify bar chart <br />
+library_visits_jan22.csv: contains data on library visits at libraries 
+near UChicago
 
 
 
