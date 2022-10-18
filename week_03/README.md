@@ -1,17 +1,17 @@
 ## Topic: Analyzing CTA Bus Reliability
 
 Why I'm Interested in this topic: As someone who takes public transit frequently and experienced bus delays,
-I was curious to dive deeper into the frequency of bus delays and factors that contribute to it.
+I was curious to dive deeper into the frequency of bus delays and factors that contribute to it. <br />
 
 Thoughts on using this data: I hope to use the compilation of data sources to highlight
 connections between traffic congestion, bus routes, and trends in ridership and analyze
-CTA's bus routes and how well they service the public.
+CTA's bus routes and how well they service the public. <br />
 
 Potential data points: riders per route, riders per region, routes per region,
-bus route/ridership variation with holidays
+bus route/ridership variation with holidays <br />
 
 Any concerns about the data: I'm not sure if I'll be able to get bus-delay specific
-information from this - I may need to use an API from CTA to do so.
+information from this - I may need to use an API from CTA to do so. <br />
 
 Data Source 1
 Title: CTA Ridership - Bus Routes: Daily Totals by Route
