@@ -1,4 +1,4 @@
-Topic: Analyzing CTA Bus Reliability
+## Topic: Analyzing CTA Bus Reliability
 
 Why I'm Interested in this topic: As someone who takes public transit frequently and experienced bus delays,
 I was curious to dive deeper into the frequency of bus delays and factors that contribute to it.
@@ -41,6 +41,13 @@ for all CTA bus routes since 2001.
 Link: https://data.cityofchicago.org/Transportation/CTA-Ridership-Bus-Routes-Monthly-Day-Type-Averages/bynn-gwxy
 
 Source: primary
+
+## Bar Chart HW
+
+homework.html: contains HTML script to view bar chart
+homework.js: contains JavaScript to load in data and modify bar chart
+
+
 
 
 
