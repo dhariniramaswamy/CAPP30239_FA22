@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicago Ghost Buses</title>
+    <style>
+        svg {
+            width: 100%;
+            height: 100vh;
+        }
+        text {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Total Bus Rides Per Year</h1>
+        <p>
+            This line chart shows the total amount of bus
+            rides taken per year during 2018 - 2022
+            in Chicago.
+        </p>
+        <div id="line_chart"></div>
+    </div>
+    <div class="container">
+        <h1>Total Number of Bus-Related Employees Per Year</h1>
+        <p>
+            This chart shows the total amount of CTA Employees
+            who work within any division related to buses 
+            during 2018 - 2022.
+        </p>
+        <div id="bar_chart"></div>
+    <!-- </div> -->
+    <!-- <div class="container">
+        <h1>Police Shootings by Age</h1>
+        <p>
+            This chart is a histogram of the distribution of police shootings by age.
+            A histogram was used to show the age groups most impacted by police
+            shootings. It would have been more meaningful to interlay this information
+            with gender, race, and socioeconomic status so that we could have a more
+            intersectional, holistic picture. 
+        </p>
+        <div id="chart"></div> -->
+    <!-- </div>  -->
+    <script src="https://d3js.org/d3.v7.min.js" ></script>   
+    <script src="rider_line.js"></script>
+    <script src="emp_bar.js"></script>
+    <!-- <script src="histogram.js"></script>
+    <script>
+        histogram();
+    </script> --> 
+</body>
+</html>
