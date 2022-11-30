@@ -1,0 +1,92 @@
+[
+  {
+    "year": "2022",
+    "values": [
+      {
+        "category": "Farebox and Pass Revenue",
+        "amount": 188531
+      },
+      {
+        "category": "Advertising and Concessions",
+        "amount": 21155
+      },
+
+      {
+        "category": "Other Revenues",
+        "amount": 18023
+      }
+    ]
+  },
+  {
+    "year": "2021",
+    "values": [
+      {
+        "category": "Farebox and Pass Revenue",
+        "amount": 242864
+      },
+      {
+        "category": "Advertising and Concessions",
+        "amount": 26687
+      },
+
+      {
+        "category": "Other Revenues",
+        "amount": 10600
+      }
+    ]
+  },
+  {
+    "year": "2020",
+    "values": [
+      {
+        "category": "Farebox and Pass Revenue",
+        "amount": 232830
+      },
+      {
+        "category": "Advertising and Concessions",
+        "amount": 24741
+      },
+
+      {
+        "category": "Other Revenues",
+        "amount": 24741
+      }
+    ]
+  },
+  {
+    "year": "2019",
+    "values": [
+      {
+        "category": "Farebox and Pass Revenue",
+        "amount": 585297
+      },
+      {
+        "category": "Advertising and Concessions",
+        "amount": 38987
+      },
+
+      {
+        "category": "Other Revenues",
+        "amount": 29725
+      }
+    ]
+  },
+  {
+    "year": "2018",
+    "values": [
+      {
+        "category": "Farebox and Pass Revenue",
+        "amount": 588791
+      },
+      {
+        "category": "Advertising and Concessions",
+        "amount": 37844
+      },
+
+      {
+        "category": "Other Revenues",
+        "amount": 29441
+      }
+    ]
+  }
+]
