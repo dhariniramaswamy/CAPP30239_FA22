@@ -16,7 +16,10 @@
             font-family: Arial, Helvetica, sans-serif;
             font-size: 10px;
         }
-    </style>
+        .ring{
+            display: flex;
+        }
+    </style> 
 </head>
 <body>
     <div class="container">
@@ -50,9 +53,20 @@
         </p>
         <div id="chart" class="ring"></div>
     </div> 
+    <div class="container">
+        <h1>Proportion of Delayed Bus Intervals</h1>
+        <p>
+            This waffle chart shows the proportion of
+            bus intervals that are greater than the scheduled
+            gap and greater than 15 minutes.
+            
+            <a href=https://rtams.org/dataset/cta-employees>Regional Transportation Authority Mapping and Statistics</a>
+        </p>
+        <div id="waffle_chart"></div>
     <script src="https://d3js.org/d3.v7.min.js" ></script>   
     <script src="rider_line.js"></script>
     <script src="emp_bar.js"></script>
     <script src="revenues.js"></script>
+    <script src="waffle.js"></script>
 </body>
 </html>
