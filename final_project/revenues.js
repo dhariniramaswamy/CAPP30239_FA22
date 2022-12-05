@@ -2,6 +2,12 @@ d3.json("cleaned_data/revenues.json").then((data) => {
   for (let d of data) {
     createRing(d);
   }
+  let categories = ["Farebox and Pass Revenue", "Advertising and Concessions", "Other Revenues"]
+  let swatchHTML = Swatches(d3.scaleOrdinal(categories, d3.schemeCategory10));
+
+  d3.select("#chart-legend")
+    .append("div")
+    .node().innerHTML = swatchHTML;
 });
 
 function createRing({ year, values }) {
@@ -33,6 +39,7 @@ function createRing({ year, values }) {
     .join("path")
     .attr("fill", (d, i) => d3.schemeCategory10[i])
     .attr("d", arc);
+    // ["#a6611a","#dfc27d","#80cdc1","#018571"]
 
   svg.append("g")
     .attr("font-size", 10)
@@ -43,11 +50,11 @@ function createRing({ year, values }) {
     .attr("transform", d => `translate(${arcLabel.centroid(d)})`)
     .selectAll("tspan")
     .data(d => {
-      return [d.data.category, d.data.amount];
+      return [d.data.amount];
     })
     .join("tspan")
     .attr("x", 0)
-    .attr("y", (d, i) => `${i * 1.1}em`)
+    .attr("y", (d, i) => `${i * 1.3}em`)
     .attr("font-weight", (d, i) => i ? null : "bold")
     .text(d => d);
 
@@ -58,4 +65,5 @@ function createRing({ year, values }) {
     .attr("alignment-baseline", "middle")
     .text(year)
     .style("font-size", 20);
+
 }

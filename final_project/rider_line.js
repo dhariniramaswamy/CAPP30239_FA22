@@ -34,8 +34,7 @@ d3.csv('cleaned_data/bus_riders.csv').then(data => {
     
     svg.append("g")
       .attr("transform", `translate(${margin.left},0)`)
-      .call(d3.axisLeft(y).tickSizeOuter(0)
-      );
+      .call(d3.axisLeft(y).tickSizeOuter(0).ticks(6).tickFormat(d => d3.format(".2s")(d)));
 
     svg.append("text")
       .attr("class", "x-label")
@@ -44,16 +43,18 @@ d3.csv('cleaned_data/bus_riders.csv').then(data => {
       .attr("y", height)
       .attr("dx", "0.5em")
       .attr("dy", "-0.5em") 
-      .text("Year");
+      .text("Year")
+      .style("font-size", 10);
     
     svg.append("text")
       .attr("class", "y-label")
       .attr("text-anchor", "end")
       .attr("x", -margin.top/2)
       .attr("dx", "-0.5em")
-      .attr("y", 10)
+      .attr("y", 7) // change this
       .attr("transform", "rotate(-90)")
-      .text("Total Bus Rides");
+      .text("Total Bus Rides")
+      .style("font-size", 10);
 
     let line = d3.line()
         .x(d => x(d.year))

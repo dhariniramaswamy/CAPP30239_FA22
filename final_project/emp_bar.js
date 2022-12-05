@@ -59,5 +59,24 @@ d3.csv("cleaned_data/emp.csv").then(data => {
         .attr('x', d => x(d.year) + (x.bandwidth()/2))
         .attr('y', d => y(d.num_emp) + 15) // moves the text onto the bar graph
         .attr('text-anchor', 'middle') // reposition the text
-        .style('fill', 'white') // make the text white
+        .style('fill', 'white')
+        .stle("font-size", 5) // make the text white
+
+    svg.append("text")
+      .attr("class", "y-label")
+      .attr("text-anchor", "end")
+      .attr("x", -margin.top/2)
+      .attr("dx", "-0.5em")
+      .attr("y", 10)
+      .attr("transform", "rotate(-90)")
+      .text("Total Number of Employees");
+
+      svg.append("text")
+      .attr("class", "x-label")
+      .attr("text-anchor", "end")
+      .attr("x", width - margin.right)
+      .attr("y", height)
+      .attr("dx", "0.5em")
+      .attr("dy", "-0.5em") 
+      .text("Year");
     });
