@@ -1,7 +1,7 @@
 This directory contains all the files for my final project for my<br /> 
 data visualization class.<br />
 
-cleaned data: folder containing all cleaned csvs for charts<br />
+```cleaned data```: folder containing all cleaned csvs for charts<br />
 raw data: folder containing raw datasets<br />
 d3-legend.js: file containing Observable code for ring chart legend<br />
 data_cleaning.py: Python script for cleaning raw datasets<br />
