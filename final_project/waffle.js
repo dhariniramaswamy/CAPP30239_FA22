@@ -80,7 +80,7 @@ function waffleChartDataTranformation(data) {
       .call((g) => g.append("text").text((d, i) => data[i].date));
   }
   
-  d3.csv("/cleaned_data/interval_cleaned.csv").then((data) => {
+  d3.csv("cleaned_data/interval_cleaned.csv").then((data) => {
     waffleChart("#waffle_chart", data);
   });
   
