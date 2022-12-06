@@ -1,4 +1,6 @@
 /* Bar Chart for CTA Bus Employees */
+/* Source: Class materials from Tiffany France's
+/* CAPP 30239 Data Visualization Course Fall 2022 */
 
 
 d3.csv("cleaned_data/emp.csv").then(data => {
@@ -10,7 +12,7 @@ d3.csv("cleaned_data/emp.csv").then(data => {
     console.log(data)
     const height = 600,
     width = 800,
-    margin = ({ top: 25, right: 30, bottom: 35, left: 50 });
+    margin = ({ top: 25, right: 30, bottom: 35, left: 60 });
 
 
     let svg = d3.select("#bar_chart")
@@ -37,7 +39,25 @@ d3.csv("cleaned_data/emp.csv").then(data => {
     svg.append("g")
         .attr("transform", `translate(${margin.left - 5},0)`)
         .call(d3.axisLeft(y));
-
+        svg.append("text")
+        .attr("class", "y-label")
+        .attr("text-anchor", "end")
+        .attr("x", -margin.top/2)
+        .attr("dx", "-0.5em")
+        .attr("y", 7) // change this
+        .attr("transform", "rotate(-90)")
+        .text("Total Number of Employeess")
+        .style("font-size", 10);
+    
+    svg.append("text")
+      .attr("class", "x-label")
+      .attr("text-anchor", "end")
+      .attr("x", width - margin.right)
+      .attr("y", height)
+      .attr("dx", "0.5em")
+      .attr("dy", "-0.5em") 
+      .text("Year")
+      .style("font-size", 10);
     /* create bar groups */    
     let bar = svg.selectAll(".bar") 
         .append("g")
@@ -46,13 +66,13 @@ d3.csv("cleaned_data/emp.csv").then(data => {
         .attr("class", "bar");
 
     bar.append("rect") // add rect to bar group
-        .attr("fill", "steelblue") // fill in the color as steelblue
+        .attr("fill", "#478BD5") // fill in the color as steelblue
         .attr("x", d => x(d.year)) // use arrow function to position the x-coordinate
         .attr("width", 0.5) // scaleBand gives us pre-formed values. 
         .attr("width", x.bandwidth()) // bandwidth is the width of each rectangle
         .attr("y", d => y(d.num_emp)) // y position attribute
         .attr("height", d => y(0) - y(d.num_emp)); // height should correspond with d.cases value. we subtract because
-        // everything in d3 svg is built from top down and we have to reverse it 
+
 
     bar.append('text') // add labels
         .text(d => d.num_emp)
@@ -60,23 +80,5 @@ d3.csv("cleaned_data/emp.csv").then(data => {
         .attr('y', d => y(d.num_emp) + 15) // moves the text onto the bar graph
         .attr('text-anchor', 'middle') // reposition the text
         .style('fill', 'white')
-        .stle("font-size", 5) // make the text white
-
-    svg.append("text")
-      .attr("class", "y-label")
-      .attr("text-anchor", "end")
-      .attr("x", -margin.top/2)
-      .attr("dx", "-0.5em")
-      .attr("y", 10)
-      .attr("transform", "rotate(-90)")
-      .text("Total Number of Employees");
-
-      svg.append("text")
-      .attr("class", "x-label")
-      .attr("text-anchor", "end")
-      .attr("x", width - margin.right)
-      .attr("y", height)
-      .attr("dx", "0.5em")
-      .attr("dy", "-0.5em") 
-      .text("Year");
+        .style("font-size", 10) // make the text white
     });

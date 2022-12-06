@@ -1,9 +1,15 @@
+/* Ring Chart for CTA Bus Employees */
+/* Source: Class materials from Tiffany France's
+/* CAPP 30239 Data Visualization Course Fall 2022 */
+
+
 d3.json("cleaned_data/revenues.json").then((data) => {
   for (let d of data) {
     createRing(d);
   }
+
   let categories = ["Farebox and Pass Revenue", "Advertising and Concessions", "Other Revenues"]
-  let swatchHTML = Swatches(d3.scaleOrdinal(categories, d3.schemeCategory10));
+  let swatchHTML = Swatches(d3.scaleOrdinal(categories, ["#478BD5", "#C7DBEF", "#BB2039"]));
 
   d3.select("#chart-legend")
     .append("div")
@@ -12,7 +18,7 @@ d3.json("cleaned_data/revenues.json").then((data) => {
 
 function createRing({ year, values }) {
   const height = 250,
-    width = 300,
+    width = 200,
     innerRadius = 40,
     outerRadius = 65,
     labelRadius = 85;
@@ -37,24 +43,28 @@ function createRing({ year, values }) {
     .selectAll("path")
     .data(arcs)
     .join("path")
-    .attr("fill", (d, i) => d3.schemeCategory10[i])
+    .attr("fill", (d, i) => ["#478BD5", "#C7DBEF", "#BB2039"][i])
     .attr("d", arc);
-    // ["#a6611a","#dfc27d","#80cdc1","#018571"]
 
+  let xPos = [20,0,10];
+  let yPos = [0,0,0];
   svg.append("g")
     .attr("font-size", 10)
     .attr("text-anchor", "middle")
     .selectAll("text")
     .data(arcs)
     .join("text")
-    .attr("transform", d => `translate(${arcLabel.centroid(d)})`)
+
+    .attr("transform", (d,i) => `translate(${arcLabel.centroid(d)[0] + 
+      xPos[i]},${arcLabel.centroid(d)[1] + yPos[i]})`)
     .selectAll("tspan")
     .data(d => {
       return [d.data.amount];
     })
     .join("tspan")
     .attr("x", 0)
-    .attr("y", (d, i) => `${i * 1.3}em`)
+    .attr("y", (d, i) => `${i * 1.3}em`) 
+
     .attr("font-weight", (d, i) => i ? null : "bold")
     .text(d => d);
 

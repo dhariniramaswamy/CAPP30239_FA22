@@ -1,9 +1,11 @@
-/* D3 Line Chart */
+/* Line Chart for CTA Ridership Totals */
+/* Source: Class materials from Tiffany France's
+/* CAPP 30239 Data Visualization Course Fall 2022 */
 
 
 const height = 500,
     width = 800,
-    margin = ({ top: 15, right: 30, bottom: 35, left: 40 });
+    margin = ({ top: 15, right: 30, bottom: 35, left: 60 });
     
 const svg = d3.select("#line_chart")
     .append("svg")
@@ -17,8 +19,6 @@ d3.csv('cleaned_data/bus_riders.csv').then(data => {
         d.year = timeParse(d.year);
     }
     console.log(data);
-    // need to remove months
-    //scale x with time
     let x = d3.scaleTime()
         .domain(d3.extent(data, d => d.year))
         .range([margin.left, width - margin.right])
@@ -51,7 +51,7 @@ d3.csv('cleaned_data/bus_riders.csv').then(data => {
       .attr("text-anchor", "end")
       .attr("x", -margin.top/2)
       .attr("dx", "-0.5em")
-      .attr("y", 7) // change this
+      .attr("y", 7) 
       .attr("transform", "rotate(-90)")
       .text("Total Bus Rides")
       .style("font-size", 10);
@@ -62,8 +62,9 @@ d3.csv('cleaned_data/bus_riders.csv').then(data => {
         .curve(d3.curveNatural);
 
     svg.append("path")
-        .datum(data) // use data for lots of points
+        .datum(data) 
         .attr("d", line)
         .attr("fill", "none")
-        .attr("stroke", "steelblue");
+        .attr("stroke", "#478BD5")
+        .attr("stroke-width", "2px");
   });

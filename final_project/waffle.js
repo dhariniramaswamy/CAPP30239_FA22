@@ -1,3 +1,8 @@
+/* Waffle Chart for CTA Bus Intervals */
+/* Source: Materials from TA (Sandy Ng) from Tiffany France's
+/* CAPP 30239 Data Visualization Course Fall 2022 */
+
+
 function waffleChartDataTranformation(data) {
     const array = [];
   
@@ -45,7 +50,8 @@ function waffleChartDataTranformation(data) {
       .padding(0.1);
   
     const color = d3
-      .scaleOrdinal(d3.schemeTableau10)
+      .scaleOrdinal(["#2B9444","#2B9444","#2B9444","#D8B06C","#D8B06C",
+      "#D8B06C","#D8B06C","#BB2039","#D8B06C","#D8B06C","#D8B06C","#BB2039","#BB2039"])
       .domain(sequence(data.length));
   
     const numPerRow = Math.floor(width / (waffleSize + padding.x));
@@ -74,7 +80,7 @@ function waffleChartDataTranformation(data) {
       .call((g) => g.append("text").text((d, i) => data[i].date));
   }
   
-  d3.csv("chartData.csv").then((data) => {
+  d3.csv("/cleaned_data/interval_cleaned.csv").then((data) => {
     waffleChart("#waffle_chart", data);
   });
   

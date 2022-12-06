@@ -23,29 +23,87 @@
             max-width: 1000px;
             margin:0 auto;
         }
+        #chart-legend span {
+            font-size: 14px;
+        }
     </style> 
 </head>
 <body>
-    <div>
-        <h1>"Ghost Buses": Exploring the Scope and Impact 
-            of Delayed Buses in Chicago Public Transit</h1>
-    </div>
     <div class="container">
+        <div>
+            <h1>"Ghost Buses": Exploring the Scope and Impact 
+                of Delayed Buses in Chicago Public Transit</h1>
+            <p>
+                Chicago is home to the second largest public transit 
+                system in the U.S., averaging approximately 540,000
+                rides across bus and rail services daily. As with other 
+                city transit systems during the pandemic, Chicago
+                experienced a decline in ridership. Source:
+                <a href="https://www.transitchicago.com/increasing-cta-ridership-continues-to-break-pandemic-records-/#:~:text=As%20more%20riders%20return%20to,reliable%2C%20consistent%20service%20possible.%E2%80%9D&text=In%20January%202022%2C%20CTA%20averaged,million%20rides%20for%20the%20month.">
+                    CTA Ridership
+                </a>
+            </p>
+            <p>
+                Since the city has been transitioning to the "new normal" and ridership
+                is slowly recovering, more transit riders have been experiencing
+                what is informally known as "ghost buses", or buses that
+                are delayed or simply do not show up. This has led to increased
+                frustration amongst public transit users and calls for action, 
+                accountability, and transparency from the Chicago Transit Authority
+                (CTA). This project aims to explore and visualize
+                the potential causes behind "ghost buses" in Chicago.
+            </p>
+        </div>
         <h1>Total Bus Rides Per Year</h1>
         <p>
-            This line chart shows the total amount of bus
-            rides taken per year during 2018 - 2022
-            in Chicago.
+            The bus ridership totals have sharply declined with the onset of the
+            pandemic. This chart represents ridership data from
+            the City of Chicago Data Portal from January 1, 2018 up
+            until July 31, 2022. The amount of times that people boarded 
+            a bus was counted daily and then aggregated at the annual level. Source:
             <a href=https://data.cityofchicago.org/Transportation/CTA-Ridership-Daily-Boarding-Totals/6iiy-9s97>Chicago Data Portal</a>
         </p>
         
         <div id="line_chart"></div>
-
+        <h1>Proportion of Delayed Bus Intervals</h1>
+        <p>
+            Bus delays can often be observed by the phenomenon called "bus bunching", 
+            where multiple buses on the same route/line arrive back to back. Transit 
+            planners try to account for this by scheduling timed intervals 
+            between bus arrivals. However, even a one minute delay or head start can 
+            throw off a whole series of scheduled intervals, which can 
+            intensify bus delays. Sometimes, transit planners will address this by
+            cutting short or cancelling a bus's trip, leading to a "ghost bus". 
+        </p>
+        <p>
+            One way to understand the extent of bus delays is to look at the discrepancy
+            between scheduled bus intervals and actual bus intervals. An interval is
+            defined as the time that passes between two consecutive buses on the same
+            route. This chart shows the proportion of bus intervals that are greater 
+            than the scheduled gap and greater than 15 minutes. Source:
+            
+            <a href=https://www.transitchicago.com/assets/1/6/06-2022_PM_Report.pdf>
+                CTA Performance Metrics</a>
+        </p>
+        <p>
+            For example, in June 2022, the CTA stated that 13.3% of bus intervals
+            for that month were longer than their scheduled gap and greater than 
+            15 minutes. Since the CTA did not provide totals, we can try to understand
+            this by looking at the chart for June 2022. For every 100 scheduled bus
+            intervals, approximately 13 of those were longer than the scheduled gap.
+            It is important to note that the CTA aims to only have 4% of intervals 
+            in this category, and they have been consistently over this threshold for the
+            past year.
+        </p>        
+        <div id="waffle_chart"></div>
         <h1>Total Number of Bus-Related Employees Per Year</h1>
         <p>
-            This chart shows the total amount of CTA Employees
-            who work within any division related to buses 
-            during 2018 - 2022.
+            The CTA has cited a bus operator and employee shortage as one of the leading
+            causes of the uptick in bus delays. This chart shows the total amount of 
+            CTA employees who work within any division related to buses 
+            during 2018 - 2022. While there has been a decline in the number of 
+            employees during the pandemic, we cannot definitely draw a causal
+            relationship between this decline and the severity of bus delays. Source:
             
             <a href=https://rtams.org/dataset/cta-employees>Regional Transportation 
                 Authority Mapping and Statistics</a>
@@ -54,23 +112,28 @@
 
         <h1>Revenue Breakdown Per Year</h1>
         <p>
-            This chart shows the proportion of different revenue streams
-            for the CTA during 2018 - 2022. The data for 2022
-            is only up until August 2022.
+            This chart shows the proportion of different revenue streams (in thousands
+            of dollars) for the CTA during 2018 - 2022. The data for 2022 is only up 
+            until August 2022. Given that the fall in ridership has negatively impacted
+            revenue, the CTA is calling for additional emergency funding from Congress.
+            Sources: 
+            <a href=https://www.transitchicago.com/finance/#financialstatements>
+                CTA Financial Statements</a>, 
+                <a href=https://www.transitchicago.com/proposed-2021-cta-budget-relies-on-new-federal-funding-to-support-service>
+                    Proposed CTA Budget</a>
         </p>
         <div id="chart-legend"></div>
         <div id="chart" class="ring"></div>
-
-        <h1>Proportion of Delayed Bus Intervals</h1>
+        <h1>Conclusion</h1>
         <p>
-            This waffle chart shows the proportion of
-            bus intervals that are greater than the scheduled
-            gap and greater than 15 minutes.
-            
-            <a href=https://rtams.org/dataset/cta-employees>Regional 
-                Transportation Authority Mapping and Statistics</a>
+            While there are numerous causes of transit and bus delays, the pandemic
+            has exacerbated the impact of bus delays on transit riders. In addition,
+            CTA's response to service cuts and bus delays has been slow. Even if the CTA's path
+            to improved transit service and overall rider experience is long, riders
+            still demand accountability, transparency, and communication. And if these
+            trends of delays and service cuts continue, where does that leave the 
+            future of the CTA and public transit in Chicago?
         </p>
-        <div id="waffle_chart"></div>
         </div>
     <script src="https://d3js.org/d3.v7.min.js" ></script>  
     <script src="d3-legend.js"></script> 
