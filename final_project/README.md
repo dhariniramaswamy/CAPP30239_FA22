@@ -1,5 +1,6 @@
-## This directory contains all the files for my final project for my<br /> 
-## data visualization class.<br />
+## CAPP 30239 Final Project<br /> 
+ In this project, I explore and visualize potential<br />
+ causes to bus delays in Chicago as a result of the pandemic.
 
 ```cleaned data```: folder containing all cleaned csvs for charts<br />
 ```raw data```: folder containing raw datasets<br />
