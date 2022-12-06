@@ -33,28 +33,39 @@
         <div>
             <h1>"Ghost Buses": Exploring the Scope and Impact 
                 of Delayed Buses in Chicago Public Transit</h1>
+        <h2>Introduction</h2>
             <p>
-                Chicago is home to the second largest public transit 
-                system in the U.S., averaging approximately 540,000
-                rides across bus and rail services daily. As with other 
-                city transit systems during the pandemic, Chicago
-                experienced a decline in ridership. Source:
-                <a href="https://www.transitchicago.com/increasing-cta-ridership-continues-to-break-pandemic-records-/#:~:text=As%20more%20riders%20return%20to,reliable%2C%20consistent%20service%20possible.%E2%80%9D&text=In%20January%202022%2C%20CTA%20averaged,million%20rides%20for%20the%20month.">
-                    CTA Ridership
-                </a>
+                Earlier this summer, I was waiting for the 55 
+                bus at the Sox-35th Red Line Station to head back to 
+                Hyde Park. The bus was already delayed and I was checking 
+                for updated arrival times on Google maps every few minutes. 
+                Fifteen minutes turned to thirty, then forty-five. Finally, 
+                the bus arrived to a growing and frustrated crowd of bus riders. 
             </p>
             <p>
+                Bus delays are a frustrating experience, 
+                but what compounds them is the lack of accurate communication.
+                Additionally, the delayed or lack of service in public transit 
+                deserts and historically underserved areas is a racial equity issue 
+                that impedes individuals from having affordable means of transportation.
+            </p>
+                Chicago is home to the second largest public transit 
+                system in the U.S., averaging approximately 540,000
+                rides across bus and rail services daily.  
                 Since the city has been transitioning to the "new normal" and ridership
                 is slowly recovering, more transit riders have been experiencing
                 what is informally known as "ghost buses", or buses that
                 are delayed or simply do not show up. This has led to increased
                 frustration amongst public transit users and calls for action, 
                 accountability, and transparency from the Chicago Transit Authority
-                (CTA). This project aims to explore and visualize
-                the potential causes behind "ghost buses" in Chicago.
+                (CTA). This project aims to understand the scope and impact of 
+                bus delays and explore the potential causes behind "ghost buses" in Chicago. Source:
+                <a href="https://www.transitchicago.com/facts/#:~:text=The%20Chicago%20Transit%20Authority%20(CTA,rides%20are%20taken%20on%20CTA.">
+                    CTA Ridership
+                </a>
             </p>
         </div>
-        <h1>Total Bus Rides Per Year</h1>
+        <h2>Total Bus Rides Per Year</h2>
         <p>
             The bus ridership totals have sharply declined with the onset of the
             pandemic. This chart represents ridership data from
@@ -65,7 +76,7 @@
         </p>
         
         <div id="line_chart"></div>
-        <h1>Proportion of Delayed Bus Intervals</h1>
+        <h2>Proportion of Delayed Bus Intervals</h2>
         <p>
             Bus delays can often be observed by the phenomenon called "bus bunching", 
             where multiple buses on the same route/line arrive back to back. Transit 
@@ -73,14 +84,17 @@
             between bus arrivals. However, even a one minute delay or head start can 
             throw off a whole series of scheduled intervals, which can 
             intensify bus delays. Sometimes, transit planners will address this by
-            cutting short or cancelling a bus's trip, leading to a "ghost bus". 
+            cutting short or cancelling a bus's trip, leading to a "ghost bus". Source:
+            <a href="https://www.transitchicago.com/performance/wtgw/#whatcausesbusdelays">
+                Causes of Bus Delays
+            </a> 
         </p>
         <p>
             One way to understand the extent of bus delays is to look at the discrepancy
             between scheduled bus intervals and actual bus intervals. An interval is
             defined as the time that passes between two consecutive buses on the same
-            route. This chart shows the proportion of bus intervals that are greater 
-            than the scheduled gap and greater than 15 minutes. Source:
+            route. This chart shows the proportion of bus intervals that are more than
+            double the scheduled gap and greater than 15 minutes. Source:
             
             <a href=https://www.transitchicago.com/assets/1/6/06-2022_PM_Report.pdf>
                 CTA Performance Metrics</a>
@@ -96,7 +110,7 @@
             past year.
         </p>        
         <div id="waffle_chart"></div>
-        <h1>Total Number of Bus-Related Employees Per Year</h1>
+        <h2>Total Number of Bus-Related Employees Per Year</h2>
         <p>
             The CTA has cited a bus operator and employee shortage as one of the leading
             causes of the uptick in bus delays. This chart shows the total amount of 
@@ -110,7 +124,7 @@
         </p>
         <div id="bar_chart"></div>
 
-        <h1>Revenue Breakdown Per Year</h1>
+        <h2>Revenue Breakdown Per Year</h2>
         <p>
             This chart shows the proportion of different revenue streams (in thousands
             of dollars) for the CTA during 2018 - 2022. The data for 2022 is only up 
@@ -124,7 +138,7 @@
         </p>
         <div id="chart-legend"></div>
         <div id="chart" class="ring"></div>
-        <h1>Conclusion</h1>
+        <h2>Final Thoughts</h2>
         <p>
             While there are numerous causes of transit and bus delays, the pandemic
             has exacerbated the impact of bus delays on transit riders. In addition,
@@ -133,6 +147,102 @@
             still demand accountability, transparency, and communication. And if these
             trends of delays and service cuts continue, where does that leave the 
             future of the CTA and public transit in Chicago?
+        </p>
+
+        <h2>Chart Development Process</h2>
+        <h3>Data Exploration</h3>
+        <p>
+            My initial data exploration involved sources like the Chicago Data Portal, 
+            Open Mobility Data, and the Regional Transportation Authority Mapping and Statistics. 
+            In addition to researching online, I also interviewed a data engineer for a transit 
+            agency that pointed me in the direction of helpful data sources and work that has already 
+            been done in documenting bus delays in Chicago. However, I realized that the work that 
+            folks had previously done had relied on the CTA Developer Tools API, which provided 
+            real-time scheduled and arrival trip data for buses. After attempting to implement this, 
+            I had to look to other sources as using the API was not within the timeframe and scope of 
+            this course. This pivoted my storytelling angle into one that was more exploratory.
+        </p>
+        <p>
+            The first data source I utilized was one that showed systemwide totals for the number of 
+            bus and rail rides provided by the CTA. This dataset is available in the Chicago Data Portal 
+            and shows data for Saturdays, weekdays, and Sunday’s/holidays from 2001 to present day. 
+            I filtered the data to only include information from 2018 - 2022 and bus-specific ridership. 
+        </p>
+        <p>
+            Another dataset I used for this project was the CTA Employees dataset provided by the 
+            Regional Transportation Authority Mapping and Statistics. The CTA had stated that the 
+            shortage of bus operators during the pandemic was one of the leading causes of bus delays, 
+            so I chose this dataset to understand the trend of CTA employee retention. I merged data for
+             2018 - 2022 and filtered all rows that contained the word “bus” in the job division 
+             description to get my final dataset.
+        </p>
+        <p>
+            The third data source I used came from the financial statements published by the 
+            CTA on their website. I chose this dataset to examine their main sources of revenue 
+            and see if changes in line items impacted their ability to deliver effective bus service.   
+        </p>
+        <p>
+            The final data source was a June 2022 performance metrics report provided by the CTA that 
+            contained annual percent changes of delayed bus intervals. Within every bus route, there 
+            is a set time that the intervals should last so that the buses following the route do not
+             arrive too late or too early. I decided to use this data source as it was the most 
+             accessible way for me to get statistics on bus delays in Chicago.
+        </p>
+        <h3>Missing Data/Gaps</h3>
+        <p>
+            The CTA does not publish the most recent and updated data on their website, so I only had data 
+            up until June 2022 for the bus intervals. Additionally, this data was only presented as 
+            percentages and the totals were not provided. This allows the CTA to potentially minimize 
+            the impact or scale of bus delays by hiding behind a percentage. It was unclear how many bus 
+            intervals were deemed as “too long” and the total number of bus intervals measured. It also 
+            would have been helpful to have data on bus route-specific bus intervals as well as time of day.
+        </p>
+        <h3>Charts</h3>
+        <p>
+            I chose to use a line chart to represent the ridership totals from 2018 - 2022 to 
+            easily visualize the sharp decline in ridership during the pandemic. 
+        </p>
+        <p>
+            To show the decline in CTA bus-related employees over time, I decided to use a bar 
+            chart. While there was a decrease in employees, it was not as sharp of a decline as 
+            we saw with ridership. Even though the CTA stated that the shortage of bus operators 
+            was one of the causes of “ghost buses”, one could question whether that decrease was 
+            substantial enough to justify the amount of delayed buses or cut service over the past 
+            couple of years.
+        </p>
+        <p>
+            I chose to use a ring chart to display the proportion of different revenue line items 
+            so that the viewer could see how influential ridership is to CTA’s funding. We can 
+            observe that since the onset of the pandemic, farebox and pass revenue continue to make 
+            up the majority of the CTA’s revenue, but the dollar amount decreased by approximately 
+            half from pre-pandemic levels. This makes sense given the sharp decrease in ridership 
+            during the pandemic, but raises questions on the type of federal/state funding needed 
+            to meet the needs of Chicago transit riders.
+        </p>
+        <p>
+            Lastly, I used a waffle chart to give the viewer a sense of how bus delays can be 
+            understood through looking at bus intervals. Because the CTA did not provide delayed 
+            bus interval totals, I thought a chart that conveyed “for every 100 on-schedule bus 
+            intervals there are x amount of larger gap bus intervals” would help the viewer 
+            understand the impact of bus delays through the lens of bus intervals.
+        </p>
+        <h3>Color Scheme</h3>
+        <p>
+            I tried to incorporate the same color scheme from the CTA website in my visualizations. 
+            For the ring chart, I used three colors to denote the three revenue categories that 
+            contribute to CTA funding annually. The red is represented by “Other Revenue Sources”, 
+            and is meant to draw attention to the fact that the CTA is vague about other revenue 
+            sources. For the waffle chart, I used green, yellow, and red to denote months where 
+            there were lower, medium level, and higher comparative levels of delayed bus intervals.
+        </p>
+        <h3>Coding Challenges</h3>
+        <p>
+            One of the main challenges was cleaning the data. I used the Pandas library to perform 
+            some cleaning, filtering, and aggregation operations and that took more time than 
+            anticipated. Another challenge was making sure the chart attributes could be seen 
+            within the large container on the page - when I tried to place each chart, the axis 
+            labels disappeared and I had to manually adjust them. Additionally, formatting labels 
+            around the ring chart and creating the waffle chart were difficult.
         </p>
         </div>
     <script src="https://d3js.org/d3.v7.min.js" ></script>  
